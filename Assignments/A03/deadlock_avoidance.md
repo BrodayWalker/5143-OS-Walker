@@ -1,12 +1,12 @@
 ## Deadlock Avoidance
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;For deadlock to occur, the following four conditions must be met:
-+ __Mutual Exclusion__
++ __Mutual Exclusion__ <br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Mutual exclusion refers to the idea that only one process may use a resource at a time. When the process is using the resource, no other resources are able to access a resource unit that has been allocated to another process.
-+ __Hold and Wait__
++ __Hold and Wait__ <br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A process may hold an allocated resource while awaiting assignment of other resources required to complete a task. For example, a process needing to copy files from one hard drive to another hard drive may hold hard drive A while hard drive B is in use. Once hard drive B is available, the resource will be allocated and the process can complete the file copying.
-+ __No Preemption__
++ __No Preemption__ <br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Preemption is the act of stopping or pausing the use of a resource so another (usually higher priority) process may use it. Once a process holds a resource, it cannot be taken away by another process or the kernel. No resource can be forcibly removed from a process holding it.
-+ __Circular Wait__
++ __Circular Wait__ <br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A circular wait occurs when a closed chain of processes exists such that each process holds at least one resource needed by the next process in the chain. Each process continues to wait for the next, resulting in a situation where no process is able to complete its task and free their claimed resources.
 
 ### Avoiding Deadlock
