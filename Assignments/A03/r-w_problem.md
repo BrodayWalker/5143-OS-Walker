@@ -12,6 +12,10 @@
 + In the __critical section__, writers must be guaranteed __mutual exclusion__, which is to say that the writer is the only process given access to the resource (the shared object text file) when it is its turn to write to the file.
 + Control of the __critical section__ is accomplished by a __mutex__.
 
+<br><br>
+![readers-writers](https://cs2.msutexas.edu/~opsysuser/images/rw.PNG)
+<br><br>
+
 ### Read/Write Locks
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Typically, the Readers-Writers problem discussed above is solved using a __read/write lock__. Many readers can gain access to the file concurrently by acquiring the mutex protecting the critical section of code. The last reader to leave the critical section will signal a waiting writer that they can enter the critical section. The write will obtain the mutex and proceed to write (no other processes are in the critical section at this point). If another writer is waiting, it can obtain the lock and proceed to write. The readers and writers alternate control of the critical section of code using this locking mutex strategy.
 
